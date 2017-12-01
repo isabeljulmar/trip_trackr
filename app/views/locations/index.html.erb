@@ -1,2 +1,7 @@
-<h1>Locations#index</h1>
-<p>Find me in app/views/locations/index.html.erb</p>
+<h1>Locations</h1>
+
+<% @locations.each do |location| %>
+  <%= location.name %> <br> <!--RAS-->
+  <%= location.address %> <br><!--RAS-->
+  <hr><!--RAS-->
+<% end %>
