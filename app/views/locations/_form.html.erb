@@ -1,0 +1,7 @@
+<%= form_for @location do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %> <br> <!--RAS-->
+  <%= f.label :address %>
+  <%= f.text_area :address %> <br><!--RAS-->
+  <%= f.submit %>
+<% end %>

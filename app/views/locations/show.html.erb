@@ -1,5 +1,5 @@
 <h1><%= @location.name %></h1>
 <h4><%= @location.address %></h4>
-<%= link_to 'Edit' %> <br><!--RAS-->
+<%= link_to 'Edit', edit_location_path(@location) %> <br><!--RAS-->
 <%= link_to 'Delete' %> <br><!--RAS-->
 <%= link_to 'All Trips', locations_path %>
