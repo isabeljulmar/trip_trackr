@@ -1,3 +1,12 @@
+5.times do
+
+Trip.create(
+  trip_name: Faker::StarWars.character,
+  trip_duration: rand(1..31)
+)
+end
+
+
 20.times do
 
 Location.create(
