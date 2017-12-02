@@ -1,5 +1,5 @@
-<h1><%= @trip.trip_name %></h1>
-<h4><%= @trip.trip_duration %></h4>
+<h2>Trip-Name: <%= @trip.trip_name %></h2>
+<h4>Trip-Duration: <%= @trip.trip_duration %> light-years</h4>
 <%= link_to 'Edit', edit_trip_path(@trip) %> <br><!--RAS-->
 <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?' } %> <br><!--RAS-->
 <%= link_to 'All Trips', trips_path %>
