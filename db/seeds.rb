@@ -10,7 +10,7 @@ end
 20.times do
 
 Location.create(
-            name: Faker::LordOfTheRings.location,
-            address: Faker::Address.street_address + " " + Faker::Address.city + " " + Faker::Address.state_abbr
+            name: Faker::StarWars.planet,
+            address: rand(1000..9999) + Faker::StarWars.droid + " " + Faker::Address.city + " " + Faker::Address.state_abbr
           )
 end

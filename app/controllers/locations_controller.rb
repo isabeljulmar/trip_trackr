@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :location_set, only: [:show, :edit, :update]
+  before_action :location_set, only: [:show, :edit, :update, :destroy]
 
   def index
     @locations = Location.all
@@ -30,6 +30,10 @@ class LocationsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+
   end
 
   private
