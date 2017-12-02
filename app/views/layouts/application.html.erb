@@ -7,12 +7,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <h5>Trip Trackr NavBar Goes Here - Find me at application.html.erb</h5> <!--NAVBAR WILL GO HERE -->
-
   <body>
+    <nav class="navbar navbar-expand-sm bg-light">
+      <div class="navbar-brand">
+        <%= link_to 'Trip Trackr', trips_path %>
+      </div>
+      <div class="nav-menu ml-auto">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to 'Adventures', trips_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Stops', locations_path, class: 'nav-link'  %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              New
+            </a>
+            <div class="dropdown-menu">
+              <%= link_to 'New Adventure', new_trip_path, class: 'dropdown-item' %>
+              <%= link_to 'New Stop', new_location_path, class: 'dropdown-item' %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
     <%= yield %>
+
   </body>
 </html>

@@ -1,5 +1,12 @@
-<h1>Trips</h1>
-<% @trips.each do |trip| %>
-  <%= link_to trip.trip_name, trip_path(trip) %> <br>
-  <hr>
-<% end %>
+<div class="container d-flex">
+  <div class="trips-new d-flex flex-column justify-content-center">
+    <h1><%= link_to 'New Adventure', new_trip_path %></h1>
+  </div>
+  <div class="trips-past ml-auto mr-5 pt-5">
+    <h1>Past Adventures</h1>
+    <% @trips.each do |trip| %>
+      <%= link_to trip.trip_name, trip_path(trip) %> <br>
+      <hr>
+    <% end %>
+  </div>
+</div>
