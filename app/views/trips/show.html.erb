@@ -1,7 +1,15 @@
 <div class="container">
   <h2>Trip-Name: <%= @trip.trip_name %></h2>
-  <h4>Trip-Duration: <%= @trip.trip_duration %> light-years</h4>
+  <h4>Trip-Duration: <%= @trip.trip_duration %> parsecs</h4>
+  <%= link_to 'Add Stops', new_trip_location_path(@trip) %> <br>
   <%= link_to 'Edit', edit_trip_path(@trip) %> <br><!--RAS-->
   <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?' } %> <br><!--RAS-->
-  <%= link_to 'All Trips', trips_path %>
+  <%= link_to 'All Trips', trips_path %> <br>
+  <hr>
+  <h5>Itnerary</h5>
+  <% @locations.each do |location| %>
+    <%= location.name %> <br>
+    <%= location.address %> <br>
+    <hr>
+  <% end %>
 </div>

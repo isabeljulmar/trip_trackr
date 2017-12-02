@@ -1,24 +1,19 @@
 class LocationsController < ApplicationController
   before_action :location_set, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @locations = Location.all
-  end
-
+  before_action :trip_set, except: [:index]
   def show
   end
-
+  
   def new
-    @location = Location.new
+    @locations = Location.all
+    @location = @trip.locations.new
   end
 
-
-
   def create
-    @location = Location.new(location_params)
+    @location = @trip.locations.new(location_params)
     if @location.save
       flash[:success] = Faker::StarWars.quote
-      redirect_to location_path(@location)
+      redirect_to trip_path(@trip)
     else
       render 'new'
     end
@@ -49,5 +44,9 @@ class LocationsController < ApplicationController
 
     def location_params
       params.require(:location).permit(:name, :address)
+    end
+
+    def trip_set
+      @trip = Trip.find(params[:trip_id])
     end
 end

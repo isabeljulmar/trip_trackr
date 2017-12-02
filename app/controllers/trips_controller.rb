@@ -1,10 +1,11 @@
 class TripsController < ApplicationController
 before_action :set_trip, only: [:show, :edit, :update, :destroy]
   def index
-    @trips = Trip.all
+    @trips = Trip.all.order('created_at DESC')
   end
 
   def show
+    @locations = @trip.locations.order( 'updated_at DESC' )
   end
 
   def new
@@ -47,5 +48,4 @@ before_action :set_trip, only: [:show, :edit, :update, :destroy]
     def set_trip
       @trip = Trip.find(params[:id])
     end
-
 end

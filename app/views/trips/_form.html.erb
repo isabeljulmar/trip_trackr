@@ -2,6 +2,6 @@
   <%= f.label :trip_name, 'Name Your Adventure' %>
   <%= f.text_field :trip_name, required: true, autofocus: true %> <br> <!--RAS-->
   <%= f.label :trip_duration, 'Duration' %>
-  <%= f.number_field :trip_duration, class: 'text-right' %> parsecs <br><!--RAS-->
+  <%= f.number_field :trip_duration, class: 'text-right', required: true %> parsecs <br><!--RAS-->
   <%= f.submit %>
 <% end %>
