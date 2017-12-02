@@ -1,11 +1,5 @@
-
-<div>
-<h1>Trip Trackr</h1>
-<h1>Here are the trips taken using Trip Trackr</h1>
+<h1>Trips</h1>
 <% @trips.each do |trip| %>
-  <%= trip.trip_name %> <br>
-  <%= trip.trip_duration %> <br>
+  <%= link_to trip.trip_name, trip_path(trip) %> <br>
   <hr>
 <% end %>
-</div>
-

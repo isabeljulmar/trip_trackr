@@ -1,2 +1,5 @@
-<h1>Trips#show</h1>
-<p>Find me in app/views/trips/show.html.erb</p>
+<h1><%= @trip.trip_name %></h1>
+<h4><%= @trip.trip_duration %></h4>
+<%= link_to 'Edit', edit_trip_path(@trip) %> <br><!--RAS-->
+<%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?' } %> <br><!--RAS-->
+<%= link_to 'All Trips', trips_path %>
