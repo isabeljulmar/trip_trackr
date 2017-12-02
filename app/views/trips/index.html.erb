@@ -1,12 +1,11 @@
 
-
-<h1 class="ui header">Trip Trackr</h1>
-<br>
- <h1>Here are the trips taken using Trip Trackr</h1>
-  
+<div>
+<h1>Trip Trackr</h1>
+<h1>Here are the trips taken using Trip Trackr</h1>
 <% @trips.each do |trip| %>
   <%= trip.trip_name %> <br>
   <%= trip.trip_duration %> <br>
   <hr>
 <% end %>
+</div>
 
