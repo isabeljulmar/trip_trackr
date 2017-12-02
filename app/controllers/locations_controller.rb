@@ -15,6 +15,7 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
     if @location.save
+      flash[:success] = Faker::StarWars.quote
       redirect_to location_path(@location)
     else
       render 'new'
@@ -26,6 +27,7 @@ class LocationsController < ApplicationController
 
   def update
     if @location.update(location_params)
+      flash[:success] = Faker::StarWars.quote
       redirect_to location_path(@location)
     else
       render 'edit'
@@ -33,7 +35,9 @@ class LocationsController < ApplicationController
   end
 
   def destroy
-
+      @location.destroy
+      flash[:danger] = "Strike me down, and I will become more powerful than you could possibly imagine."
+      redirect_to locations_path
   end
 
   private
