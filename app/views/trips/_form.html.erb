@@ -1,0 +1,7 @@
+<%= form_for @trip do |f| %>
+  <%= f.label :trip_name %>
+  <%= f.text_field :trip_name, required: true, autofocus: true %> <br> <!--RAS-->
+  <%= f.label :trip_duration %>
+  <%= f.number_field :trip_duration, class: 'text-right' %> light-years <br><!--RAS-->
+  <%= f.submit %>
+<% end %>
