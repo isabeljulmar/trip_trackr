@@ -1,9 +1,6 @@
 class LocationsController < ApplicationController
-  before_action :location_set, only: [:show, :edit, :update, :destroy]
+  before_action :location_set, only: [:edit, :update, :destroy]
   before_action :trip_set
-
-  def show
-  end
 
   def new
     @locations = Location.all

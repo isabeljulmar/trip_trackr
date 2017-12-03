@@ -1,8 +1,9 @@
 <%= form_for @trip, class: 'form-group' do |f| %>
   <%= f.label :trip_name, 'Adventure Name' %>
-  <%= f.text_field :trip_name, class: 'form-control bg-dark text-white', required: true, autofocus: true, placeholder: 'The force will be with you... always' %> <br>
+  <%= f.text_field :trip_name, class: 'form-control bg-dark text-white text-center', required: true, autofocus: true, placeholder: 'The force will be with you... always' %> <br>
   <%= f.label :trip_duration, 'Duration' %>
-  <%= f.number_field :trip_duration, class: 'form-control text-right bg-dark text-white', required: true%> <div class="text-right">Parsecs</div> <br>
+  <%= f.number_field :trip_duration, class: 'form-control text-right bg-dark text-white text-center', required: true%> <div class="text-center"><em>Parsecs</em></div> <br>
   <%= f.submit nil, class: 'btn btn-warning text-white mt-3 form-link' %>
 <% end %>
+
 <%= link_to 'Go Back', trips_path, class: 'btn btn-danger text-white mt-3 form-link' %>
