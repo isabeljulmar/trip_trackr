@@ -16,7 +16,7 @@ a{
   color: #FFD700;
 }
 
-a:hover:not(#logo-link){
+a:hover:not(#logo-link):not(.form-link){
   text-decoration: none;
   color: #FFD700;
   border-bottom: 1px solid #FFD700;
@@ -42,6 +42,11 @@ a:hover:not(#logo-link){
   margin-top: 10%;
 }
 
-.trips-past{
+.trips-index{
   text-decoration: underline;
+}
+
+//Styles for Trips _form.partial
+.form-link{
+  cursor:pointer;
 }

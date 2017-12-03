@@ -1,7 +1,7 @@
-<%= form_for [@trip, @location] do |f| %>
+<%= form_for [@trip, @location], class: 'form-group' do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name, required: true, autofocus: true %> <br> <!--RAS-->
+  <%= f.text_field :name, class: 'form-control bg-dark text-white', required: true, autofocus: true %> <br> <!--RAS-->
   <%= f.label :address %>
-  <%= f.text_area :address %> <br><!--RAS-->
+  <%= f.text_area :address, class: 'form-control bg-dark text-white' %> <br><!--RAS-->
   <%= f.submit %>
 <% end %>
