@@ -10,6 +10,7 @@ gem 'turbolinks', '~> 5'
 gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 4.7.0'
 
 group :development, :test do
   gem 'pry'

@@ -1,1 +1,21 @@
+// Removes New Adventures links on small screens
+@media (max-width: 768px) {
+  .trips-new{
+    display: none;
+  }
+ }
 
+// trips#show
+ #index-container{
+   margin-top: 10%;
+ }
+
+// trips#index
+ .trips-index{
+   text-decoration: underline;
+ }
+
+// _form partial
+ .form-link{
+   cursor:pointer;
+ }

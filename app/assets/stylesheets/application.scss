@@ -1,9 +1,10 @@
 @import '**/*';
-
 @import "bootstrap";
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
-// Styles for All Pages
+// set background image
 body{
   background-image: url('trip-trackr-bg.jpg');
   background-repeat: no-repeat;
@@ -12,17 +13,19 @@ body{
   color: #FFD700;
 }
 
+// uniform font-color for links
 a{
   color: #FFD700;
 }
 
+// removes default link hover, adds custom styling
 a:hover:not(#logo-link):not(.form-link){
   text-decoration: none;
   color: #FFD700;
   border-bottom: 1px solid #FFD700;
 }
 
-//Styles for NAV
+// navbar custom styles
 .nav-menu{
   margin-right: 7%;
 }
@@ -37,16 +40,6 @@ a:hover:not(#logo-link):not(.form-link){
   border-bottom: 1px solid #FFD700;
 }
 
-//Styles for Index - trips#show
-#index-container{
-  margin-top: 10%;
-}
-
-.trips-index{
-  text-decoration: underline;
-}
-
-//Styles for Trips _form.partial
-.form-link{
-  cursor:pointer;
+#collapseNavbar{
+  padding-left: 60%;
 }
