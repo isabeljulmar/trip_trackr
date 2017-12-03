@@ -1,14 +1,19 @@
 <div class="container d-flex" id="index-container">
+
   <div class="trips-new">
     <h1><%= link_to 'New Adventure', new_trip_path %></h1>
   </div>
+
   <div class="ml-auto">
-    <h1 class="trips-past">Past Adventures</h1>
-    <% @trips.each do |trip| %>
-      <%= link_to(trip_path(trip)) do %> <br>
-        <%= trip.trip_name %> |
-        <%= trip.trip_duration %> parsecs
+    <h1 class="trips-index text-center">Adventures</h1>
+    <ul class="list-group text-center">
+      <% @trips.each do |trip| %>
+        <%= link_to(trip_path(trip), class: 'list-item') do %> <br>
+          <%= trip.trip_name %> |
+          <%= trip.trip_duration %> parsecs
+        <% end %>
       <% end %>
-    <% end %>
+    </ul>
   </div>
+
 </div>

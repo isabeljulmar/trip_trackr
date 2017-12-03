@@ -1,20 +1,53 @@
 <div class="container">
-  <h2>Trip: <%= @trip.trip_name %></h2>
-  <h4>Duration: <%= @trip.trip_duration %> parsecs</h4>
-  <%= link_to 'Add Stops', new_trip_location_path(@trip) %> <br>
-  <%= link_to 'Edit', edit_trip_path(@trip) %> <br><!--RAS-->
-  <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?' } %> <br><!--RAS-->
-  <%= link_to 'All Trips', trips_path %> <br>
-  <hr>
-  <h5>Itnerary</h5>
-  <hr>
-  <% @locations.each do |location| %>
-    <%= location.name %> <br>
-    <%= location.address %> <br>
-    <div class="edit-destroy-icons">
-      <%= link_to 'Edit', edit_trip_location_path(@trip, location) %>
-      <%= link_to 'Delete', trip_location_path(@trip, location), method: :delete, data: { confirm: 'Are you sure?' } %> <br>
-    </div>
-    <hr>
-  <% end %>
+
+  <div class="text-center">
+    <h2><%= @trip.trip_name %></h2>
+    <h4 class='mb-4'><%= @trip.trip_duration %> parsecs</h4>
+  </div>
+
+  <nav class="navbar navbar-expand-sm bg-default d-flex row justify-content-around", id='trip-nav-show'>
+    <ul class="navbar-nav">
+      <li class="nav-item px-5">
+        <%= link_to 'Add', new_trip_location_path(@trip), class:'nav-link' %>
+      </li>
+      <li class="nav-item px-5">
+        <%= link_to 'Edit', edit_trip_path(@trip), class: 'nav-link' %>
+      </li>
+      <li class="nav-item px-5">
+        <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link' %>
+      </li>
+      <li class="nav-item px-5">
+        <%= link_to 'Back', trips_path, class: 'nav-link' %>
+      </li>
+    </ul>
+  </nav>
+
+  <h3 class='text-center mt-5'>Itnerary</h3>
+  <table class="table table-striped table-dark mt-5 text-center">
+    <thead>
+      <tr id='location-table-head'>
+        <th scope="col">Location ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% num = 1 %>
+      <% @locations.each do |location| %>
+        <tr>
+          <th scope='col'><%= num  %></th>
+          <td><%= location.name %></td>
+          <td><%= location.address %></td>
+          <td>
+          <div class="edit-destroy-icons">
+            <%= link_to 'Edit', edit_trip_location_path(@trip, location) %>
+            <%= link_to 'Delete', trip_location_path(@trip, location), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+          </td>
+        </tr>
+        <% num += 1 %>
+      <% end %>
+    </tbody>
+  </table>
+
 </div>

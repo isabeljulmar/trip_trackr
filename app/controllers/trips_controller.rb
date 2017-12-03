@@ -6,7 +6,7 @@ before_action :set_trip, only: [:show, :edit, :update, :destroy]
   end
 
   def show
-    @locations = @trip.locations.order( 'updated_at DESC' )
+    @locations = @trip.locations.order( 'created_at ASC' )
   end
 
   def new
@@ -40,7 +40,6 @@ before_action :set_trip, only: [:show, :edit, :update, :destroy]
     flash[:danger] = "Strike me down, and I will become more powerful than you could possibly imagine."
     redirect_to trips_path
   end
-
 
   private
     def trip_params
