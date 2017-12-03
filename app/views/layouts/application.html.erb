@@ -8,9 +8,11 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-sm bg-dark">
       <div class="navbar-brand">
-        <%= link_to 'Trip Trackr', trips_path %>
+        <%= link_to trips_path, id:'logo-link' do %>
+          <%= image_tag(('logo-nav-bar.png'), id: 'nav-logo-img') %>
+        <% end %>
       </div>
       <div class="nav-menu ml-auto">
         <ul class="navbar-nav">
@@ -28,6 +30,6 @@
       <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
     <%= yield %>
-    
+
   </body>
 </html>

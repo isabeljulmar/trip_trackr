@@ -2,6 +2,46 @@
 
 @import "bootstrap";
 
+
+// Styles for All Pages
+body{
+  background-image: url('trip-trackr-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #FFD700;
+}
+
+a{
+  color: #FFD700;
+}
+
+a:hover:not(#logo-link){
+  text-decoration: none;
+  color: #FFD700;
+  border-bottom: 1px solid #FFD700;
+}
+
+//Styles for NAV
 .nav-menu{
   margin-right: 7%;
+}
+
+#nav-logo-img{
+  height: 50px;
+  width: 45%;
+}
+
+#nav-logo-img:hover{
+  text-decoration: none;
+  border-bottom: 1px solid #FFD700;
+}
+
+//Styles for Index - trips#show
+#index-container{
+  margin-top: 10%;
+}
+
+.trips-past{
+  text-decoration: underline;
 }

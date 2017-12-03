@@ -1,5 +1,6 @@
 class TripsController < ApplicationController
 before_action :set_trip, only: [:show, :edit, :update, :destroy]
+
   def index
     @trips = Trip.all.order('created_at DESC')
   end
@@ -15,6 +16,7 @@ before_action :set_trip, only: [:show, :edit, :update, :destroy]
   def create
     @trip = Trip.new(trip_params)
     if @trip.save
+      flash[:success] = Faker::StarWars.quote
       redirect_to trip_path(@trip)
     else
       render 'new'

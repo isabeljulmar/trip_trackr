@@ -1,9 +1,10 @@
 class LocationsController < ApplicationController
   before_action :location_set, only: [:show, :edit, :update, :destroy]
-  before_action :trip_set, except: [:index]
+  before_action :trip_set
+
   def show
   end
-  
+
   def new
     @locations = Location.all
     @location = @trip.locations.new
@@ -25,7 +26,7 @@ class LocationsController < ApplicationController
   def update
     if @location.update(location_params)
       flash[:success] = Faker::StarWars.quote
-      redirect_to location_path(@location)
+      redirect_to trip_path(@trip)
     else
       render 'edit'
     end
@@ -34,7 +35,7 @@ class LocationsController < ApplicationController
   def destroy
       @location.destroy
       flash[:danger] = "Strike me down, and I will become more powerful than you could possibly imagine."
-      redirect_to locations_path
+      redirect_to trip_path(@trip)
   end
 
   private
