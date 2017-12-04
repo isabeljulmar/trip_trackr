@@ -1,21 +1,60 @@
-// Removes New Adventures links on small screens
+//Resizes List of Trips To Fit Under Nav
 @media (max-width: 768px) {
-  .trips-new{
+  .crawl{
+    margin-top: 20%;
+  }
+}
+//Removes Yoda Image on Smaller Screens
+@media (max-width: 956px){
+  .yoda{
     display: none;
   }
- }
+}
 
-// trips#show
+//Styles for Trips#Show View
  #index-container{
    margin-top: 10%;
  }
 
-// trips#index
+ table{
+   margin-bottom: 20%;
+ }
+
+ #location-table-head{
+   color: #FFD700;
+ }
+
+//Styling for Root
  .trips-index{
+   margin-top: 20%;
    text-decoration: underline;
  }
 
-// _form partial
+ .crawl{
+   position: relative;
+   top: -100px;
+   transform-origin: 50% 100%;
+   // animation: crawl 50s linear;
+ }
+
+// _form partial styling
  .form-link{
    cursor:pointer;
  }
+
+ //Star Wars Animation Scroll
+  .star-wars{
+    perspective: 400px;
+  }
+
+//Star Wars Scroll Key Frames
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
