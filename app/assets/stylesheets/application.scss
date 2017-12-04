@@ -53,3 +53,15 @@ a:hover:not(#logo-link):not(.form-link){
 #collapseNavbar{
   padding-left: 60%;
 }
+
+footer {
+  color: #7a6701;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 10px;
+}
+
+footer a {
+  color: #7a6701;
+}
