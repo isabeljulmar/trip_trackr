@@ -1,10 +1,15 @@
 class LocationsController < ApplicationController
   before_action :location_set, only: [:edit, :update, :destroy]
-  before_action :trip_set
+  before_action :trip_set, except: [:new_no_nest, :no_nest_create]
 
   def new
     @locations = Location.all
     @location = @trip.locations.new
+  end
+
+  def new_no_nest
+    @location = Location.new
+    @trips = Trip.all
   end
 
   def create
@@ -14,6 +19,16 @@ class LocationsController < ApplicationController
       redirect_to trip_path(@trip)
     else
       render 'new'
+    end
+  end
+
+  def no_nest_create
+    @location = Location.new(location_params)
+    if @location.save
+      flash[:success] = Faker::StarWars.quote
+      redirect_to trips_path
+    else
+      render 'new_no_nest'
     end
   end
 
@@ -41,7 +56,7 @@ class LocationsController < ApplicationController
     end
 
     def location_params
-      params.require(:location).permit(:name, :address)
+      params.require(:location).permit(:name, :address, :trip_id)
     end
 
     def trip_set

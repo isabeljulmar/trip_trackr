@@ -1,4 +1,13 @@
 <div class="container mt-5 text-center">
-  <h1><%= @location.name %></h1>
-  <%= render 'form' %>
+  <h1 class="mb-5"><%= @location.name %></h1>
+
+  <%= form_for [@trip, @location], class: 'form-group' do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control bg-dark text-white text-center my-5', required: true, autofocus: true %> <br> <!--RAS-->
+    <%= f.label :address %>
+    <%= f.text_area :address, class: 'form-control bg-dark text-white text-center' %> <br><!--RAS-->
+    <%= f.submit nil, class: 'btn btn-warning text-white mt-3 form-link' %>
+  <% end %>
+
+  <%= link_to 'Go Back', trips_path, class: 'btn btn-danger text-white mt-3 form-link' %>
 </div>

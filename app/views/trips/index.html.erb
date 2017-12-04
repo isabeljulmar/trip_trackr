@@ -1,11 +1,6 @@
 <div class="container d-flex" id="index-container">
-
-  <div class="trips-new">
-    <h1><%= link_to 'New Adventure', new_trip_path %></h1>
-  </div>
-
-  <div class="ml-auto">
-    <h1 class="trips-index text-center">Adventures</h1>
+  <div class="mx-auto">
+    <h1 class="trips-index text-center">Active Adventures</h1>
     <ul class="list-group text-center">
       <% @trips.each do |trip| %>
         <%= link_to(trip_path(trip), class: 'list-item') do %> <br>

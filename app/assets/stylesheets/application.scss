@@ -14,8 +14,14 @@ body{
 }
 
 // uniform font-color for links
-a{
+a, .dd-link{
   color: #FFD700;
+}
+
+//overide default styles for dropdown on Nav
+.dd-link:hover{
+  text-decoration: underline;
+  background: none;
 }
 
 // removes default link hover, adds custom styling
@@ -23,6 +29,10 @@ a:hover:not(#logo-link):not(.form-link){
   text-decoration: none;
   color: #FFD700;
   border-bottom: 1px solid #FFD700;
+}
+
+.dropdown-menu{
+
 }
 
 // navbar custom styles

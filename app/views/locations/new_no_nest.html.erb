@@ -1,0 +1,12 @@
+<div class="container mt-5 text-center">
+  <h1 class="mb-5">New Stop</h1>
+  <%= form_for @location, url: no_nest_create_path(@location), class: 'form-group' do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control bg-dark text-white text-center my-4', list: 'locations', required: true, autofocus: true, autocomplete: 'off'  %>
+    <%= f.label :address %>
+    <%= f.text_area :address, class: 'form-control bg-dark text-white text-center' %>
+    <%= f.select :trip_id, @trips.collect { |t| [t.trip_name, t.id] }, {}, class: 'form-control bg-dark my-4 text-white' %>
+    <%= f.submit nil, class: 'btn btn-warning text-white mt-3 form-link'  %>
+  <% end %>
+  <%= link_to 'Go Back', trips_path, class: 'btn btn-danger text-white mt-3 form-link' %>
+</div>
